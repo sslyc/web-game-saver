@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sample for injecting to index.html</title>
+    </head>
+    <body>
+        [game codes...]
+
+        <!-- add belows to the game code at rear of html body tag -->
+        <script src="./wgs/saver.js"></script>
+        <script src="./wgs/[game-name].js"></script>
+        <script>
+            configSaver_[Game-Name]('[game-url]');
+        </script>
+        <!-- done -->
+         
+    </body>
+</html>

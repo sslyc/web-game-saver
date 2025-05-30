@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saver测试</title>
+    <style>
+        button {width: 150px; height: 80px; border-radius: 6px 6px; }
+        p span {color: #999;}
+        p b {font-weight: 600;}
+    </style>
+</head>
+<body>
+    <p><button onclick="ssGameSaver.showSavingBoard()">Save</button> <span>Shortcut:</span> <b>Atl+Shift+S</b></p>
+    <p><button onclick="ssGameSaver.showLoadingBoard()">Load</button> <span>Shortcut:</span> <b>Atl+Shift+L</b></p>
+    <p><button onclick="ssGameSaver.showLoadingAutoSaveBoard()">Load Auto Save</button> <span>Shortcut:</span> <b>Atl+Shift+A</b></p>
+    <div id="message"></div>
+    <script src="../saver.js"></script>
+    <script>
+        let globalNum = 0;
+        function showMsg(msg) {
+            globalNum++;
+            // alert(msg);
+            let ele = document.getElementById('message');
+            ele.innerHTML = `<p>${msg}&nbsp;&nbsp;&nbsp;&nbsp;<span>[${globalNum}]</span></p>\n` + ele.innerHTML
+        }
+
+        // ssGameSaver.clear();
+        // console.log('Account info has been cleared')
+        ssGameSaver.config({
+            // apiHost: 'http://localhost:3000',  //using mock.js
+            apiHost: 'http://localhost:5141',  //using .net program
+            game: 'test',
+            onload: data => showMsg(`Loaded from server: ${data}`),
+            getData: () => { showMsg('Saved!'); return "any data"; }
+        })
+    </script>
+</body>
+</html>

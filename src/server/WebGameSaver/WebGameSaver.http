@@ -1,0 +1,46 @@
+@WebGameSaver_HostAddress = http://localhost:5141
+
+GET {{WebGameSaver_HostAddress}}/install
+
+###
+
+POST {{WebGameSaver_HostAddress}}/config
+Content-Type: application/json
+
+{
+    "name": "yes",
+    "password": "no"
+}
+
+###
+
+
+GET {{WebGameSaver_HostAddress}}/a/FD1286353570C5703799BA76999323B7C7447B06/list
+
+###
+
+GET {{WebGameSaver_HostAddress}}/a/FD1286353570C5703799BA76999323B7C7447B06/load/1
+
+###
+
+POST {{WebGameSaver_HostAddress}}/a/FD1286353570C5703799BA76999323B7C7447B06/save/1
+Content-Type: application/json
+
+"xxx123"
+
+###
+
+GET {{WebGameSaver_HostAddress}}/a/FD1286353570C5703799BA76999323B7C7447B06/auto-save/list
+
+###
+
+GET {{WebGameSaver_HostAddress}}/a/FD1286353570C5703799BA76999323B7C7447B06/auto-save/load/mypc
+
+###
+
+POST {{WebGameSaver_HostAddress}}/a/FD1286353570C5703799BA76999323B7C7447B06/auto-save/save/mypc
+Content-Type: application/json
+
+"ccc321"
+
+###
