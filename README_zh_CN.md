@@ -34,7 +34,7 @@ Switch to [English Document](./README.md)
 
 ## 安装
 
-下载[发布版](./release)。
+从Releases页下载。
 
 ### Server
 

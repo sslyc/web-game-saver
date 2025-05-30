@@ -28,7 +28,7 @@ The project consists of Server-side and Client-side code.
 
 ## Installation
 
-Download the [release version](./release).
+Download from releases page.
 
 ### Server
 
